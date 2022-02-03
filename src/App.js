@@ -1,8 +1,5 @@
 import React, {useState} from 'react';
-import moment from 'moment';
-import 'moment/locale/ru';
-
-moment.locale('ru');
+import withHOC from "./hoc/Wrapper";
 
 function DateTime(props) {
     return (
@@ -10,12 +7,7 @@ function DateTime(props) {
     )
 }
 
-
-const DateTimePretty = (props) => {
-    return (
-        <DateTime {...props} date={moment(props.date).fromNow()} />
-    )
-}
+const DateTimePretty = withHOC(DateTime);
 
 function Video(props) {
     return (
